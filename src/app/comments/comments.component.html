@@ -1,0 +1,22 @@
+<header>
+  <nav>
+    <a routerLink="/">Back</a>
+  </nav>
+  <h1>{{Item.name}}</h1>
+</header>
+<main>
+  <ul>
+      
+    <li *ngFor="let comment of Item.comments; let odd=odd; let even=even">
+        <div 
+        [class.odd]='odd'
+        [class.even]='even'
+        ></div>
+      <span>{{comment}}</span><br>
+    </li>
+  </ul>
+</main>
+<footer>
+  <input type="text" id='createCommets' placeholder="New comment goes here..." #comment>
+<button id="addComment" (click)="addComments(comment.value); comment.value=''">></button>
+</footer>

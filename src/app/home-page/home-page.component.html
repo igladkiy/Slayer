@@ -1,0 +1,17 @@
+<header>
+  <div id="sayer">Sayer</div>
+  <div id="world">World's most used time waster</div>
+  </header>
+  <ul>
+    <li *ngFor = "let item of Items" (click)="item.showDeleteBtn=!item.showDeleteBtn">
+      <span id="itemOfLi" >{{item.name}}</span>
+        <button id="countOfCommets" routerLink="/CommentsComponent/{{item.id}}" *ngIf="!item.showDeleteBtn">{{item.comments.length}}</button>
+        <button id="deleteItem" *ngIf="item.showDeleteBtn" (click)="deleteItem(item.id)">Delete</button>
+    </li>
+  </ul>
+  
+  <nav>
+      <a id="add" routerLink="/CreateItem">+</a>
+  </nav>
+
+
